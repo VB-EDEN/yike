@@ -19,7 +19,6 @@ module.exports = {
         publicPath: process.env.NODE_ENV === 'production'
             ? config.build.assetsPublicPath
             : config.dev.assetsPublicPath,
-        libraryTarget : 'var' 
     },
     resolve: {
         extensions: ['.js', '.vue', '.json'],
@@ -36,6 +35,13 @@ module.exports = {
     },
     module: {
         rules: [
+            {
+                test: require.resolve('jquery'),
+                use: [{
+                  loader: 'expose-loader',
+                  options: '$'
+                }]
+            },
             {
                 test: /\.vue$/,
                 loader: 'vue-loader',

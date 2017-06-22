@@ -11,6 +11,7 @@
     "start": "webpack-dashboard -- node build/dev-server.js"
   },
   "dependencies": {
+    "expose": "^0.1.4",
     "font-awesome": "^4.7.0",
     "jquery": "^1.12.4",
     "normalize.css": "^5.0.0",
